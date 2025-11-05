@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.timdmedical.rs
+
+# Sitemaps
+Sitemap: https://www.timdmedical.rs/sitemap.xml
