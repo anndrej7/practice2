@@ -27,3 +27,78 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* Custom Toast Styles - TIM-D MEDICAL */
+.Toastify__toast-container {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.Toastify__toast {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+  padding: 16px 20px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  min-height: 60px !important;
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(135deg, #039F87 0%, #027F6C 100%) !important;
+  color: #ffffff !important;
+  border-left: 4px solid #00E1B2 !important;
+}
+
+.Toastify__toast--success .Toastify__toast-icon {
+  color: #00E1B2 !important;
+}
+
+.Toastify__toast--error {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
+  color: #ffffff !important;
+  border-left: 4px solid #ff6b6b !important;
+}
+
+.Toastify__toast--error .Toastify__toast-icon {
+  color: #ff6b6b !important;
+}
+
+.Toastify__toast--info {
+  background: linear-gradient(135deg, #039F87 0%, #027F6C 100%) !important;
+  color: #ffffff !important;
+  border-left: 4px solid #00E1B2 !important;
+}
+
+.Toastify__toast--warning {
+  background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%) !important;
+  color: #333333 !important;
+  border-left: 4px solid #ff9800 !important;
+}
+
+.Toastify__progress-bar {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.Toastify__progress-bar--success {
+  background: #00E1B2 !important;
+}
+
+.Toastify__progress-bar--error {
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+.Toastify__close-button {
+  color: rgba(255, 255, 255, 0.9) !important;
+  opacity: 0.8 !important;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1 !important;
+  color: #ffffff !important;
+}
+
+.Toastify__toast-body {
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+}

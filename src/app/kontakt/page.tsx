@@ -44,7 +44,7 @@ export default function KontaktPage() {
       if (response.ok) {
         setToast({
           type: 'success',
-          message: '🎉 Poruka je uspešno poslata! Odgovorićemo vam uskoro.',
+          message: 'Poruka je uspešno poslata! Odgovorićemo vam uskoro.',
           show: true
         });
         setFormData({ ime: "", email: "", poruka: "" });
@@ -54,7 +54,7 @@ export default function KontaktPage() {
     } catch (error) {
       setToast({
         type: 'error',
-        message: '❌ Greška pri slanju poruke. Molimo pokušajte ponovo.',
+        message: 'Greška pri slanju poruke. Molimo pokušajte ponovo.',
         show: true
       });
     } finally {
@@ -442,22 +442,32 @@ export default function KontaktPage() {
           initial={{ opacity: 0, y: 50, scale: 0.3 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 50, scale: 0.3 }}
-          className={`fixed top-4 right-4 z-50 max-w-sm w-full p-6 rounded-2xl shadow-2xl border-l-4 ${
-            toast.type === 'success' 
-              ? 'bg-green-50 border-green-400 text-green-800' 
-              : 'bg-red-50 border-red-400 text-red-800'
-          }`}
+          className="fixed top-4 right-4 z-50 max-w-sm w-full p-6 rounded-2xl shadow-2xl border-l-4"
+          style={{
+            background: toast.type === 'success' 
+              ? 'linear-gradient(135deg, rgba(3, 159, 135, 0.1) 0%, rgba(255, 255, 255, 1) 100%)'
+              : 'linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(255, 255, 255, 1) 100%)',
+            borderLeftColor: toast.type === 'success' ? '#00E1B2' : '#ff6b6b',
+            color: toast.type === 'success' ? '#027F6C' : '#c82333',
+            fontFamily: 'Montserrat, sans-serif'
+          }}
         >
           <div className="flex items-start">
             <div className="flex-shrink-0">
               {toast.type === 'success' ? (
-                <div className="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center">
+                <div 
+                  className="w-8 h-8 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: '#039F87' }}
+                >
                   <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
               ) : (
-                <div className="w-8 h-8 bg-red-400 rounded-full flex items-center justify-center">
+                <div 
+                  className="w-8 h-8 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: '#dc3545' }}
+                >
                   <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
@@ -465,16 +475,23 @@ export default function KontaktPage() {
               )}
             </div>
             <div className="ml-4 flex-1">
-              <p className="text-base font-medium">{toast.message}</p>
+              <p className="text-base font-medium" style={{ fontWeight: 500 }}>{toast.message}</p>
             </div>
             <div className="ml-4 flex-shrink-0">
               <button
                 onClick={() => setToast(null)}
-                className={`inline-flex rounded-md p-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-                  toast.type === 'success' 
-                    ? 'text-green-400 hover:bg-green-100 focus:ring-green-600' 
-                    : 'text-red-400 hover:bg-red-100 focus:ring-red-600'
-                }`}
+                className="inline-flex rounded-md p-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors"
+                style={{
+                  color: toast.type === 'success' ? '#039F87' : '#dc3545'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = toast.type === 'success' 
+                    ? 'rgba(3, 159, 135, 0.1)' 
+                    : 'rgba(220, 53, 69, 0.1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                }}
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
