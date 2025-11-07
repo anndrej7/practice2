@@ -18,33 +18,20 @@ export default function Footer() {
   const [formData, setFormData] = useState({
     ime: "",
     email: "",
-    poruka: "",
-    gdpr: false
+    poruka: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-    if (type === 'checkbox') {
-      setFormData({
-        ...formData,
-        [name]: (e.target as HTMLInputElement).checked
-      });
-    } else {
-      setFormData({
-        ...formData,
-        [name]: value
-      });
-    }
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.gdpr) {
-      toast.error('Morate prihvatiti GDPR uslove');
-      return;
-    }
-    
     setIsSubmitting(true);
     
     try {
@@ -62,7 +49,7 @@ export default function Footer() {
 
       if (response.ok) {
         toast.success('Poruka je uspešno poslata! Odgovorićemo vam uskoro.');
-        setFormData({ ime: "", email: "", poruka: "", gdpr: false });
+        setFormData({ ime: "", email: "", poruka: "" });
       } else {
         throw new Error("Greška pri slanju poruke");
       }
@@ -208,25 +195,6 @@ export default function Footer() {
                     }}
                     placeholder="Vaša poruka..."
                   />
-                </div>
-
-                <div className="flex items-start gap-8px">
-                  <input
-                    type="checkbox"
-                    id="gdpr"
-                    name="gdpr"
-                    checked={formData.gdpr}
-                    onChange={handleChange}
-                    required
-                    className="mt-1"
-                    style={{ width: '16px', height: '16px' }}
-                  />
-                  <label 
-                    htmlFor="gdpr"
-                    style={{ fontSize: '14px', color: 'rgba(255,255,255,0.9)' }}
-                  >
-                    Prihvatam <Link href="/privacy" className="underline">politiku privatnosti</Link> i dozvoljavam da se moji podaci koriste za kontakt. *
-                  </label>
                 </div>
 
                 <button
