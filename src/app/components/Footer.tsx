@@ -62,7 +62,6 @@ export default function Footer() {
 
   const quickLinks = [
     { name: "Naslovna", href: "/" },
-    { name: "O nama", href: "/o-nama" },
     { name: "Proces", href: "/#proces" },
     { name: "Cene", href: "/#cene" },
     { name: "Kontakt", href: "/#kontakt" }
@@ -346,48 +345,6 @@ export default function Footer() {
                 </li>
                 <li style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)' }}>
                   Patronažna služba sa kućnim lečenjem
-                </li>
-              </ul>
-            </div>
-
-            {/* Legal */}
-            <div>
-              <h3 className="font-bold" style={{ fontSize: '18px', color: '#fff', marginBottom: '16px' }}>
-                Pravne informacije
-              </h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/privacy"
-                    className="transition-colors duration-300"
-                    style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)' }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = '#00E1B2'}
-                    onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.8)'}
-                  >
-                    Politika privatnosti
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/terms"
-                    className="transition-colors duration-300"
-                    style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)' }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = '#00E1B2'}
-                    onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.8)'}
-                  >
-                    Uslovi korišćenja
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/cookies"
-                    className="transition-colors duration-300"
-                    style={{ fontSize: '16px', color: 'rgba(255,255,255,0.8)' }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = '#00E1B2'}
-                    onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.8)'}
-                  >
-                    Cookie politika
-                  </Link>
                 </li>
               </ul>
             </div>
