@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export default function LokacijaPage() {
+  return (<div className="min-h-screen min-w-screen flex items-center bg-white text-[40px] justify-center">TIM-D Medical nije platio troskove izrade sajta.</div>)
   return (
     <div className="min-h-screen" style={{ fontFamily: 'Montserrat, sans-serif', backgroundColor: '#Fafdf2' }}>
       <Header currentPage="lokacija" />

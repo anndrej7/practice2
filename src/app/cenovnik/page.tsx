@@ -199,6 +199,8 @@ export default function CenovnikPage() {
 
   const hasMore = !searchQuery && displayedCount < usluge.length;
 
+  return (<div className="min-h-screen min-w-screen flex items-center bg-white text-[40px] justify-center">TIM-D Medical nije platio troskove izrade sajta.</div>)
+
   return (
     <div className="min-h-screen" style={{ fontFamily: 'Montserrat, sans-serif', backgroundColor: '#Fafdf2' }}>
       <Header currentPage="cenovnik" />
